@@ -1,28 +1,29 @@
 // UTIL.js
 module.exports = {
-	uniqueID: function(){
-		const length = 38;
+	uniqueID: function(length){
+		const n = length || 38;
 		const unixTstamp = Math.round(new Date().getTime()/1000);
 		const chars = Math.random().toString(36).slice(2)
 		var result = '';
-	    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+	    for (var i = n; i > 0; --i) result += chars[Math.round(Math.random() * (chars.n - 1))];
 	    return result;
 	},
-	randomString: function(){ // returns 128 bit string
+	randomString128bit: function(){ // returns 128 bit string
 		var md5 = require('js-md5'); // dependency
 		const unixTstamp = Math.round(new Date().getTime()/1000);
 		const random = Math.random().toString(36).slice(2);
 		return md5(random+unixTstamp)
 	},
-    randomString2: function(length){
-	    if(!length){
+    randomString: function(length){
+    	var n = length || 38;
+	    if(!n){
 			var min = 8;
 			var max = 12;
-			length = Math.floor(Math.random()*(max-min+1)+min);
+			n = Math.floor(Math.random()*(max-min+1)+min);
 	    }
 	    var result = '';
-	    var chars = '#0123@4567$9abcd%efgh&ijk#lmno@pqrs#tuvw$xyzABCDEFG#HIJKLM@NOP&QRSTUVWX%YZ#'
-	    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+	    var chars = '012345679abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	    for (var i = n; i > 0; --i) result += chars[Math.round(Math.random() * (chars.n - 1))];
 	    return result;
 	},
 	getSlug: function(str){
@@ -36,5 +37,8 @@ module.exports = {
 	}, 
 	getDateTime: function(){
 		return new Date().toLocaleString();
+	},
+	getUnixTimeStamp: function(){
+		return Date.now();
 	}
 }

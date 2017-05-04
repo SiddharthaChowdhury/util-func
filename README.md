@@ -8,48 +8,34 @@ Bunch of widely used functions in most common public projects
 
 ## How to use
 
-    var TEST = require('input-validate');
+    var UTIL = require('util-func');
       
-    if(TEST.onlyNumber(123)){
-        	console.log("It is a valid number, so add your stuff here")
-    }
+    console.log(UTIL.getSlug('Some string that contains 124 and & not symbol, bla bla'))
 
 ## Utilities
 
-	uniqueID: function(){
-		const length = 38;
-		const unixTstamp = Math.round(new Date().getTime()/1000);
-		const chars = Math.random().toString(36).slice(2)
-		var result = '';
-	    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-	    return result;
+	uniqueID: function( length ){
+		// returns unique_ID of length `n` passed as argument || default 38
 	},
-	randomString: function(){ // returns 128 bit string
-		var md5 = require('js-md5'); // dependency
-		const unixTstamp = Math.round(new Date().getTime()/1000);
-		const random = Math.random().toString(36).slice(2);
-		return md5(random+unixTstamp)
+	getUnixTimeStamp: function(){
+		// returns UNIX timestamp in milliseconds
 	},
-    randomString2: function(length){
-	    if(!length){
-			var min = 8;
-			var max = 12;
-			length = Math.floor(Math.random()*(max-min+1)+min);
-	    }
-	    var result = '';
-	    var chars = '#0123@4567$9abcd%efgh&ijk#lmno@pqrs#tuvw$xyzABCDEFG#HIJKLM@NOP&QRSTUVWX%YZ#'
-	    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-	    return result;
+	randomString128bit: function(){ 
+		// returns 128 bit string
+	},
+    randomString: function(length){
+	    // get random string of size `n` passed as argument || default 38
 	},
 	getSlug: function(str){
-		return str.trim().toLowerCase().replace(/[^a-z0-9-]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+		// Get string converted to slug
 	},
 	getDate: function(){
-		return new Date().toLocaleDateString();
+		// Get current local date [ format: dd/mm/yyyy ] 
 	},
 	getTime: function(){
-		return new Date().toLocaleTimeString();
+		// Get current local time [ format: dd/mm/yyyy ]
 	}, 
 	getDateTime: function(){
-		return new Date().toLocaleString();
-	}
+		// Get current local date and time
+	},
+

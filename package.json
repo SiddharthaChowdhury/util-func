@@ -1,6 +1,6 @@
 {
   "name": "util-func",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Some commonly used functions bundled together thats it!",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SiddharthaChowdhury/util-func/issues"
   },
-  "homepage": "https://github.com/SiddharthaChowdhury/util-func#readme"
+  "homepage": "https://github.com/SiddharthaChowdhury/util-func#readme",
+  "dependencies": {
+    "js-md5": "^0.4.2"
+  }
 }
