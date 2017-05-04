@@ -10,7 +10,7 @@ Bunch of widely used functions in most common public projects
 
     var UTIL = require('util-func');
       
-    console.log(UTIL.getSlug('Some string that contains 124 and & not symbol, bla bla'))
+    console.log(UTIL.getSlug('String 124 and & not symbol, bla bla'))
 
 ## Utilities
 
@@ -33,9 +33,9 @@ Bunch of widely used functions in most common public projects
 		// Get current local date [ format: dd/mm/yyyy ] 
 	},
 	getTime: function(){
-		// Get current local time [ format: dd/mm/yyyy ]
+		// Get current local time [ format: hh:mm:ss ]
 	}, 
 	getDateTime: function(){
-		// Get current local date and time
+		// Get current local date and time [ format: dd/mm/yyyy, hh:mm:ss ]
 	},
 
