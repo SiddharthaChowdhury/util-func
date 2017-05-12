@@ -1,6 +1,6 @@
 {
   "name": "util-func",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Some commonly used functions bundled together thats it!",
   "main": "index.js",
   "scripts": {
