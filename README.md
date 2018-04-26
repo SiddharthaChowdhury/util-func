@@ -67,12 +67,29 @@ Bunch of widely used functions in most common public projects
 	paginationOffset: function(pageNumber, size = 10){
 		/* 
 		Useful for pagination
+		~~~~~~~~~~~~~~~ SIGNATURE ~~~~~~~~~~~~~~~~~
 		INPUT: current page number
 		RETURN:{
 	      		"from": Number, 	// Where to start from
 	      		"to": Number,		// Where to stop
 	      		"size": pageSize	// Number of records
 	  		} 
+		*/
+	},
+
+	strip_tags : function(string, allowed){
+		/*
+		This function strips all the tags from the "string" (param 1) expect the ones mentioned in "allowed" (param 2).
+		Will also remove <!-- comment and <?php tags
+		~~~~~~~~~~~~~~~ SIGNATURE ~~~~~~~~~~~~~~~~~
+		INPUT: "HTML-String"(String) , "<allowed><tags>" (String)
+		RETURN: "Filtered String" (String)
+
+		----------------- Example ----------------
+		var text = '<p>There <i style="">is</i> some <u>text</u> here</p>';
+		var allowed = '<i><p>'; 						// Allowed tags
+		var filteredText = strip_tags( text, allowed); 	// will strip all the tags from "text" except <i> and <p>
+		console.log(filteredText)						// Result: <p>There <i style="">is</i> some text here</p>
 		*/
 	}
 
