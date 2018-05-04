@@ -36,6 +36,8 @@ module.exports = {
     },
 
     getSlug: function(str) {
+        if(!str)
+            return 'Error! Slug parameter missing.'
         return str.trim().toLowerCase().replace(/[^a-z0-9-]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
     },
     getDate: function() {
